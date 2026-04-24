@@ -5,75 +5,225 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loja Universo Marnew</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f5f5;
-      color: #333;
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f5f6f8;
+      color:#222;
     }
-    header {
-      background: #111;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
+
+    .topbar{
+      background:#111;
+      color:#fff;
+      padding:8px;
+      text-align:center;
+      font-size:13px;
     }
-    .container {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
+
+    header{
+      background:linear-gradient(135deg,#000,#333);
+      color:#fff;
+      padding:25px 15px;
+      text-align:center;
     }
-    .produto {
-      background: #fff;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+    header h1{margin:0;font-size:26px;}
+    header p{margin-top:5px;opacity:.8;}
+
+    /* SEARCH + CART */
+    .tools{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      padding:10px;
+      background:#fff;
+      flex-wrap:wrap;
+      border-bottom:1px solid #ddd;
     }
-    .produto h2 {
-      margin: 0 0 10px;
+
+    .tools input{
+      padding:10px;
+      width:250px;
+      border:1px solid #ccc;
+      border-radius:8px;
     }
-    .btn {
-      display: inline-block;
-      padding: 10px 15px;
-      background: #ff4500;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-top: 10px;
+
+    .cart{
+      background:#ff3b30;
+      color:#fff;
+      padding:10px 15px;
+      border-radius:8px;
+      font-weight:bold;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 12px;
-      color: #777;
+
+    nav{
+      background:#fff;
+      padding:10px;
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      flex-wrap:wrap;
+      border-bottom:1px solid #ddd;
     }
+
+    nav a{
+      text-decoration:none;
+      color:#333;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    .banner{
+      background:#ff3b30;
+      color:#fff;
+      text-align:center;
+      padding:12px;
+      font-weight:bold;
+    }
+
+    .container{max-width:1200px;margin:auto;padding:20px;}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:#fff;
+      border-radius:12px;
+      padding:15px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+      transition:.2s;
+    }
+
+    .card:hover{transform:translateY(-5px);}
+
+    .img{
+      width:100%;
+      height:140px;
+      background:#eee;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:10px;
+      font-size:12px;
+      color:#777;
+    }
+
+    h2{font-size:16px;margin:10px 0 5px;}
+
+    .price{color:#ff3b30;font-weight:bold;}
+
+    .btn{
+      display:block;
+      text-align:center;
+      padding:10px;
+      background:#ff3b30;
+      color:#fff;
+      text-decoration:none;
+      border-radius:8px;
+      margin-top:10px;
+      font-weight:bold;
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      font-size:12px;
+      color:#777;
+      margin-top:30px;
+    }
+
+    .hide{display:none;}
   </style>
 </head>
 <body>
 
+<div class="topbar">🔥 Ofertas atualizadas diariamente | Universo Marnew</div>
+
 <header>
   <h1>🛍️ Loja Universo Marnew</h1>
-  <p>Ofertas com links do Mercado Livre</p>
+  <p>Marketplace de afiliados Mercado Livre</p>
 </header>
 
-<div class="container">
-
-  <div class="produto">
-    <h2>Panela de Pressão Marmol 4.2L</h2>
-    <p>Qualidade premium com frete grátis.</p>
-    <a class="btn" href="https://meli.la/1K8CFCK" target="_blank">Comprar agora</a>
-  </div>
-
-  <div class="produto">
-    <h2>Produto 2 - Em breve</h2>
-    <p>Mais ofertas chegando...</p>
-  </div>
-
+<div class="tools">
+  <input type="text" id="search" placeholder="Buscar produtos..." onkeyup="searchProducts()" />
+  <div class="cart">🛒 Carrinho: <span id="cartCount">0</span></div>
 </div>
 
-<footer>
-  © 2026 Universo Marnew - Afiliados Mercado Livre
-</footer>
+<nav>
+  <a onclick="filterCategory('all')">Todos</a>
+  <a onclick="filterCategory('cozinha')">Cozinha</a>
+  <a onclick="filterCategory('casa')">Casa</a>
+  <a onclick="filterCategory('tech')">Tecnologia</a>
+</nav>
+
+<div class="banner">🔥 OFERTAS RELÂMPAGO — aproveite agora!</div>
+
+<div class="container">
+  <div class="grid" id="products">
+
+    <div class="card cozinha" data-name="panela de pressão marmol">
+      <div class="img">Imagem do produto</div>
+      <h2>Panela de Pressão Marmol</h2>
+      <p class="price">R$ 191,00</p>
+      <a class="btn" href="https://meli.la/1K8CFCK" target="_blank" onclick="addCart()">Comprar</a>
+    </div>
+
+    <div class="card tech" data-name="fone bluetooth">
+      <div class="img">Imagem do produto</div>
+      <h2>Fone Bluetooth Pro</h2>
+      <p class="price">Oferta especial</p>
+      <a class="btn" href="#" onclick="addCart()">Ver oferta</a>
+    </div>
+
+    <div class="card casa" data-name="air fryer">
+      <div class="img">Imagem do produto</div>
+      <h2>Air Fryer Digital</h2>
+      <p class="price">Promoção</p>
+      <a class="btn" href="#" onclick="addCart()">Ver oferta</a>
+    </div>
+
+  </div>
+</div>
+
+<footer>© 2026 Universo Marnew - Afiliados</footer>
+
+<script>
+let cart = 0;
+
+function addCart(){
+  cart++;
+  document.getElementById('cartCount').innerText = cart;
+}
+
+function searchProducts(){
+  let input = document.getElementById('search').value.toLowerCase();
+  let cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    let name = card.getAttribute('data-name');
+    if(name.includes(input)){
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+function filterCategory(cat){
+  let cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    if(cat === 'all'){
+      card.style.display = "block";
+    } else {
+      card.classList.contains(cat) ? card.style.display="block" : card.style.display="none";
+    }
+  });
+}
+</script>
 
 </body>
 </html>
