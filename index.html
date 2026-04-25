@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loja Universo Marnew</title>
+
   <style>
     body{
       margin:0;
@@ -15,19 +16,36 @@
     header{
       background:linear-gradient(135deg,#000,#333);
       color:#fff;
-      padding:25px 15px;
+      padding:30px 15px;
       text-align:center;
     }
 
-    header h1{margin:0;font-size:26px;}
+    header h1{margin:0;font-size:28px;}
     header p{margin-top:5px;opacity:.8;}
 
-    .topbar{
-      background:#111;
+    .hero{
+      background:#ff3b30;
       color:#fff;
       text-align:center;
-      padding:8px;
+      padding:15px;
+      font-weight:bold;
+    }
+
+    .badges{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+      padding:10px;
+      background:#fff;
+      border-bottom:1px solid #ddd;
       font-size:13px;
+    }
+
+    .badge{
+      background:#f2f2f2;
+      padding:6px 10px;
+      border-radius:20px;
     }
 
     .container{
@@ -58,27 +76,11 @@
       object-fit:cover;
     }
 
-    .content{
-      padding:15px;
-    }
+    .content{padding:15px;}
 
-    .title{
-      font-size:16px;
-      font-weight:bold;
-      margin-bottom:5px;
-    }
-
-    .price{
-      color:#ff3b30;
-      font-weight:bold;
-      margin-bottom:10px;
-    }
-
-    .desc{
-      font-size:13px;
-      color:#555;
-      margin-bottom:10px;
-    }
+    .title{font-size:16px;font-weight:bold;margin-bottom:5px;}
+    .price{color:#ff3b30;font-weight:bold;margin-bottom:8px;}
+    .desc{font-size:13px;color:#555;margin-bottom:10px;}
 
     .btn{
       display:block;
@@ -91,9 +93,7 @@
       font-weight:bold;
     }
 
-    .btn:hover{
-      background:#d92f27;
-    }
+    .btn:hover{background:#d92f27;}
 
     footer{
       text-align:center;
@@ -103,49 +103,86 @@
     }
   </style>
 </head>
-<body>
 
-<div class="topbar">🔥 Ofertas atualizadas | Loja Universo Marnew</div>
+<body>
 
 <header>
   <h1>🛍️ Loja Universo Marnew</h1>
-  <p>Produtos com link direto Mercado Livre</p>
+  <p>Ofertas selecionadas do Mercado Livre</p>
 </header>
+
+<div class="hero">
+🔥 OFERTAS LIMITADAS — aproveite agora antes que acabe
+</div>
+
+<div class="badges">
+  <div class="badge">🚚 Frete rápido</div>
+  <div class="badge">🔒 Compra segura</div>
+  <div class="badge">💰 Melhor preço</div>
+  <div class="badge">🔥 Ofertas do dia</div>
+</div>
 
 <div class="container">
 
   <div class="grid">
 
-    <!-- PRODUTO 1 -->
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1585238342028-4e0f7b6b5c3a" />
+      <img src="https://via.placeholder.com/400x300?text=Produto+1" />
       <div class="content">
-        <div class="title">Panela de Pressão Antiaderente</div>
-        <div class="price">R$ 191,00</div>
-        <div class="desc">Alta qualidade, frete grátis e oferta limitada</div>
-        <a class="btn" href="https://meli.la/14C9RLd" target="_blank">Comprar no Mercado Livre</a>
-      </div>
-    </div>
-
-    <!-- PRODUTO 2 -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1518441902117-f0a0b3f3c7d7" />
-      <div class="content">
-        <div class="title">Fone Bluetooth Pro</div>
+        <div class="title">Produto 1</div>
         <div class="price">Oferta especial</div>
-        <div class="desc">Som de alta qualidade e bateria duradoura</div>
-        <a class="btn" href="https://mercadolivre.com/sec/2tHtdV2" target="_blank">Comprar no Mercado Livre</a>
+        <div class="desc">Clique para ver no Mercado Livre</div>
+        <a class="btn" href="https://mercadolivre.com/sec/2tHtdV2" target="_blank">Comprar agora</a>
       </div>
     </div>
 
-    <!-- PRODUTO 3 -->
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1604908176997-125f25cc500f" />
+      <img src="https://via.placeholder.com/400x300?text=Produto+2" />
       <div class="content">
-        <div class="title">Air Fryer Digital</div>
-        <div class="price">Promoção do dia</div>
-        <div class="desc">Cozinha saudável sem óleo</div>
-        <a class="btn" href="https://meli.la/1gCX81j" target="_blank">Comprar no Mercado Livre</a>
+        <div class="title">Produto 2</div>
+        <div class="price">Oferta especial</div>
+        <div class="desc">Clique para ver no Mercado Livre</div>
+        <a class="btn" href="https://meli.la/14C9RLd" target="_blank">Comprar agora</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x300?text=Produto+3" />
+      <div class="content">
+        <div class="title">Produto 3</div>
+        <div class="price">Oferta especial</div>
+        <div class="desc">Clique para ver no Mercado Livre</div>
+        <a class="btn" href="https://meli.la/1gCX81j" target="_blank">Comprar agora</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x300?text=Produto+4" />
+      <div class="content">
+        <div class="title">Produto 4</div>
+        <div class="price">Oferta especial</div>
+        <div class="desc">Clique para ver no Mercado Livre</div>
+        <a class="btn" href="https://meli.la/2eHBaoa" target="_blank">Comprar agora</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x300?text=Produto+5" />
+      <div class="content">
+        <div class="title">Produto 5</div>
+        <div class="price">Oferta especial</div>
+        <div class="desc">Clique para ver no Mercado Livre</div>
+        <a class="btn" href="https://meli.la/16bKwSL" target="_blank">Comprar agora</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x300?text=Produto+6" />
+      <div class="content">
+        <div class="title">Produto 6</div>
+        <div class="price">Oferta especial</div>
+        <div class="desc">Clique para ver no Mercado Livre</div>
+        <a class="btn" href="https://meli.la/2AgNovc" target="_blank">Comprar agora</a>
       </div>
     </div>
 
@@ -154,7 +191,7 @@
 </div>
 
 <footer>
-  © 2026 Universo Marnew - Todos os direitos reservados
+  © 2026 Universo Marnew - Afiliados Mercado Livre
 </footer>
 
 </body>
